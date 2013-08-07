@@ -26,7 +26,7 @@ app.configure ->
   app.use assets()
   app.use express.static join __dirname, "assets"
 
-load('locals').into(app, extlist:['.yml'])
+load('locals', extlist:['.yml']).into(app)
 load('routes').into(app)
 
 app.configure 'development', ->
