@@ -1,5 +1,5 @@
 
-reveal = new Date("2013-08-08T07:00:00.000Z")
+reveal = new Date("2013-08-08T07:12:00.000Z")
 
 module.exports = (app) ->
 
