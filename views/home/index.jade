@@ -2,20 +2,13 @@ extends ../layout
 
 block content
 
-  h1.amf-logo
-    .all All
-    .my My
-    .friends Friends
-    .music-festival Music Festival
+
+  a.cartel(href="http://www.superboletos.com/perl/redirect.pl?eventoId=14204")
+    img(src="/img/amf13-cartel.jpg")
 
   #content
+
     .news
       a.twitter-timeline(href="https://twitter.com/infoamf", data-widget-id="361946584205893632") Tweets by @infoamf
       script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")
 
-    .date
-      span 16 de Noviembre 2013
-      span Casa de la Cultura - Tijuana, México
-
-    .tickets
-      a(href="http://www.superboletos.com/perl/redirect.pl?eventoId=14204") Tickets
