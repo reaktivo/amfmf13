@@ -1,0 +1,241 @@
+- name: ACXDC
+  slug: acxdc
+  description: |
+    ACxDC, diminutivo de Antichrist Demoncore, es un banda de Los Ángeles con sonido adepto al
+    powerviolence, así como una filosofía que va de lo satanista a lo vegetariano. Aquellos que han sobrevivido
+    a sus presentaciones podrán confirmar su poder, energía y la sana dosis de ira que las guitarras ofrecen al
+    tiempo que se despedazan. Una banda que nació para tocar en vivo.
+
+- name: Apocalipsis
+  slug: apocalipsis
+  description: |
+    Entre tanta injusticia social, capitalismo vulgar y demás perversiones humanas, es necesario encontrar una
+    salida. La de Apocalipsis es construir música oscura y abstracta (desde metal hasta experimental) que
+    explota en vivo. Una banda auténtica compuesta por Mico, Chamaz y Fabian, y que, de paso, funge como reflejo
+    del mundo en el que vivimos. Actualmente editan su música de manera independiente; han tocado en el festival
+    Antes De Que Nos Olviden y en el festival Nrmal.
+
+- name: Ases Falsos
+  slug: ases_falsos
+  description: |
+    El nuevo sonido chileno incluye a una pandilla de chicos visionarios que hacen pop atemporal y cuyas
+    acciones estarían a la alta en un futuro posmoderno donde el rock and roll en español fuera tan cotizado
+    como el agua y la comida. Letras continentales capaces de explorar temas profundos al tiempo que nos dan
+    tonadas fabricadas para mudarse indefinidamente a tu cabeza. Esta será su primera presentación en México y,
+    sin duda, una imperdible para cualquiera capaz de apreciar un sonido auténtico. Le deben lo mismo al pop
+    azucarado como al brit-pop, el power-pop y, claro, a esos reivindicados años 80.
+
+- name: Biocrisis
+  slug: biocrisis
+  description: |
+    Una mano suelta con resentimiento la cuerda del bajo y éste suena como si la tierra comenzara a dividirse,
+    de repente se azotan batacas y guitarras se desenvuelven como mortales serpientes; se trata de Biocrisis,
+    banda formada en Tijuana en 2005 con influencias en el metal escandinavo, el anarcopunk y en la música
+    clásica. En su corta pero fructífera carrera han participado en diversas compilaciones nacionales y
+    extranjeras, y en 2012 lanzaron su LP debut En Memoria Al Dolor, el cual está disponible en descarga
+    gratuita. Biocrisis cree que el punk está vivo, sigue enojado y por ello grita hasta que su garganta sangra.
+
+- name: Bonebreaker
+  slug: bone_breaker
+  description: |
+    Hardcore tijuanense como debe de ser. Desde hace ya unos años, Bonebreaker ha creado punk pesado y rápido
+    desde su trinchera en Tijuana. Este grupo cree en la música como catalizador del movimiento, sus shows son
+    garantía de slam y desahogo de la cotidianidad.  Metal y hardcore a máximo volumen, su fuerza habla de una
+    clara intención musical y el poder para ejecutarla.
+
+- name: Calafia Puta
+  slug: calafia_puta
+  description: |
+    Para hacer temblar al cuerpo no se necesitan de canciones de diez minutos: Calafia Puta es síntesis de
+    destrucción, amor y sangre. Comenzaron a hacer ruido en 2008 y después de dos años lanzaron su álbum debut
+    titulado 2; ya en 2012 editaron un disco junto a la poderosa agrupación Corrupt Bastards. Al ser tan fácil
+    escuchar al inofensivo artista de moda, ¿por qué decides escuchar a esta peligrosa banda? Porque sabes bien
+    lo que te conviene.
+
+- name: Celofán
+  slug: celofan
+  description: |
+    Para Celofán, las posibilidades del sonido responden a un deseo por modificarlas. Nunca ha sido recomendable
+    estancarse en una sola perspectiva, pues cuando se está en busca de otras formas, nuevas vibraciones, un
+    objetivo de valor real se cumple: crear melodías trascendentes. Verlo en directo representa la rara
+    oportunidad de escuchar a un proyecto en su etapa de gestación, donde la experimentación corre libre.
+
+- name: Deep Magic
+  slug: deep_magic
+  description: |
+    Alex Gray crea sonidos que se entrelazan y disuelven con la misma facilidad, atmósferas nítidas que
+    recuerdan a un día en medio de la naturaleza.  Como músico, presume de un oído privilegiado para la creación
+    de profundidad sónica. Ha tocado como parte de la banda en vivo de Sun Araw en múltiples escenarios y en
+    directo es capaz de reproducir sonidos tan precisos como hipnotizantes.
+
+- name: DJ Smurphy
+  slug: dj_smurphy
+  description: |
+    Jessica es el nombre de la chica de voz dulce que produce sonidos frescos de electrónica fusionada. Bass
+    music, techno y guiños al dance hall redondean una propuesta que vive de contrastar sonidos agudos y
+    chillantes con bajos densos y repetitivos. Algo del futuro se esconde en la mente de esta chica, que desde
+    el 2012 produce tracks de combinaciones improbables y remixes memorables. Su último EP #SMURPHWAVE es sólo
+    una probada de lo que Smurphy puede hacer; sin duda, una buena referencia de qué esperar al verla en vivo.
+
+- name: Electric Healing Sound
+  slug: ehs
+  description: |
+    Banda amante del feedback y las tonadas de amor. Su sonido es claro en sus referencias; sin embargo, al
+    tratar de unir la psicodelia con el noise y plácidas melodías pegajosas, esta banda crea algo
+    definitivamente interesante y fresco. Considerados como tijuanenses en San Diego y como gringos en Tijuana,
+    EHS es un amalgama propositiva y nostalgia apta para cualquier geografía.
+
+- name: Ford Proco
+  slug: ford_proco
+  description: |
+    Desde hace casi 20 años, este dúo tijuanense ha recorrido caminos sónicos inexplorados. Su paso por la
+    electrónica nacional nos acercó a lo verdaderamente experimental y propositivo, fuera de las formulas del
+    género; simplistas y llenas de clichés regionales. Su sonido es un catedral ruidista y minimalista.
+    Referentes básicos y relevantes.
+
+- name: Ibi Ego
+  slug: ibi_ego
+  description: |
+    Synthpop cargado de guitarras y sintetizadores nostálgicos. Desde el 2003, la banda ha explorado los
+    suntuosos caminos del dream pop y el indie rock para llegar a un sonido bien equilibrado que no pierde
+    tristeza en aras de una melodía. Pop DIY de múltiples capas para contemplar recuerdos adolescentes, pero
+    acompañados de beats afilados y una producción refinada y madura. Una banda que desde su comienzo prometió
+    mucho y que ahora cumple en los escenarios.
+
+- name: Josue Josue
+  slug: josue_josue
+  description: |
+    Detrás del misterioso y reiterativo nombre, se encuentra la figura de un joven de 21 años originario del
+    Estado de México, o como diría él: “un nini con Internet tratando de hacer rap suburbano”. En 2012 lanza su
+    EP Linus y comienza a colaborar y hacer remixes de manera muy prolífica. En vivo sus compases
+    incomprensibles y variaciones rítmicas constantes dan para una experiencia poderosa, rap que recae tanto en
+    los matices del sonido, como en la astucia adolescente de las letras.
+
+- name: LAO
+  slug: lao
+  description: |
+    Sin duda, uno de los productores más ocupados de la escena defeña. Lao, desde hace ya unos años, lleva el
+    pulso de la muy particular especie de música electrónica de nuestra geografía. Al ser un exponente básico
+    del bass capitalino, DJ y ávido fan de hacer remixes de insípidas canciones pop, su set en vivo tiene todo
+    para obligarte a bailar como si el verano durara para siempre.
+
+- name: Letters from Readers
+  slug: lfr
+  description: |
+    Gerardo Montoya es el líder de este proyecto: un hombre de varios rostros y talentos. Su carrera comenzó
+    hace unos años donde Montoya fue parte de varias bandas de surf e indie pop, hasta que en 2007 se decide
+    comenzar una travesía como solista. Su interés está en crear canciones para espacios libres de complacencia
+    y sueños de hilos negros. Un hombre-banda que selecciona cuidadosamente cada elemento para moldear un cuerpo
+    imperfecto. A principios de año lanzó su disco Dot Dash a través de At-At Records.
+
+- name: Los Blenders
+  slug: los_blenders
+  description: |
+    Banda originaria de Coapa capaz de producir surf acelerado, pop empalagoso y garage gris. Actualmente están
+    firmados por el sello británico Number4Door. Escucharlos es como imaginar que el cielo estuviera siempre
+    despejado, que todo el tiempo tuvieras energía para bailar y, a tu lado, está la persona con la que te
+    gustaría pasar el resto de tu vida. La banda sonora de tu día perfecto debe tener a Los Blenders.
+
+- name: M Gengras
+  slug: m_gengras
+  description: |
+    Secuencias casi infinitas de beats y espíritus electrónicos, así como una comparación abstracta entre los
+    sentimientos del hombre y los de una máquina, es lo que ofrece este compositor nacido en 1982, quien ha
+    colaborado con diversos artistas entre los que destacan Duppy Gun y Sun Araw. Geddes saltó a la fama con su
+    proyecto Antique Brothers, el cual formó junto a su hermano Cyrus. No descartemos la idea de que en un
+    futuro muy cercano nuestra lengua responda a circuitos y programación, por eso debemos comenzar a escuchar a
+    M. Geddes Gengras, quien actualmente reside en Los Ángeles.
+
+- name: María Minerva
+  slug: maria_minerva
+  description: |
+    Radicada en Londres, Minerva crea pop deconstruido, alterado y con múltiples y electrónicas capas de
+    referencias pop.  Firmada por Not Not Fun, la música de Minerva navega con particular sensualidad los mares
+    del synthpop y el lo-fi. AMF13 es su primera presentación en México.
+
+- name: Matthew Sullivan
+  slug: matthew_sullivan
+  description: |
+    Matthew Sullivan, cuya mano acompaña a la historia del drone, noise y ambient, encabeza proyectos solistas
+    intrigantes y es el hombre detrás de Ekhein, label experimental que editaría trabajos de M. Geddes Gengras,
+    Keith Fullerton Whitman, Mark Lord y Geoff Mullen, entre otros. Su trabajo se distingue por crear tracks
+    elegantes y siniestros, así como por su capacidad de crear tensión al usar elementos sonoros contrastantes.
+
+- name: Ramona
+  slug: ramona
+  description: |
+    Ramona son extractos folclóricos de un corazón que se deshizo poco a poco en el camino, y del cual hay que
+    aprender para no cometer los mismos errores de amor; una agrupación que fusiona géneros como el pop y la
+    música clásica. En 2011 editaron de manera independiente su EP Vamos A Viajar con el que se dieron a conocer
+    en la escena musical del norte del país. Sus letras se basan en las vivencias –buenas y malas– de los
+    miembros del grupo, preponderando temas como la soledad, la alegría y la sinceridad.
+
+- name: Rancho Shampoo
+  and: y La Indian Gold Orchestra
+  slug: rancho_shampoo
+  description: |
+    La música actual se ha alejado de la espiritualidad; ahora lo único que le importa a todos es el dinero, la
+    fama y el reconocimiento. A todos excepto a Rancho Shampoo, banda que bajo las órdenes de ancestros
+    Cherokees, Apaches y Hopis, compone una cosmogonía pop de luces parpadeantes y sátira. Rancho Shampoo no da
+    conciertos, cada show es un acto más cercano a lo ceremonial que al vano ejercicio de la música. El grupo
+    lanzó este año su álbum El Vuelo del Golondrino a través de Static Discos e Indian Gold Records.
+
+- name: Selma Oxor
+  slug: selma_oxor
+  description: |
+    ¿Por qué debería importarte lo que la gente dice de ti? Muévete, suda, agita el cabello, escúpele a la de
+    enfrente… Selma anda por la calle como si su voluntad fuera la única respetada por el barrio, pues ella
+    piensa que la vida es demasiado corta para dividirla entre la libertad y la moral. Su propuesta oscila entre
+    la electrónica experimental y el punk; en 2012 se mudó a la Ciudad de México para trabajar en su ópera prima
+    User 69, editada mediante la disquera Vale Vergas Discos.
+
+- name: Siete Catorce
+  slug: siete_catorce
+  description: |
+    No tiene nada de malo obligar a que los opuestos se atraigan, al contrario, éstos lo hacen sin ningún tipo
+    de coerción. Marco Polo Gutiérrez, mejor conocido como Siete Catorce, lo sabe y es por esto que decide
+    alejase de los sonidos cotidianos y darle una voz protagónica al aire y su serenidad, acompañado de un
+    compás candente que susurra deseo. Este año presentó su EP 2, material distribuido a través de N.A.A.F.I.
+    Además de trabajar como Siete Catorce, Marco Polo edita música bajo el seudónimo de Den5hion.
+
+- name: Sixties Guns
+  slug: sixties_guns
+  description: |
+    Para satisfacer esa necesidad por ritmos bajos y pop dulce, Sixties Guns, proyecto creado por Xavi, Boom,
+    Jesse y John, manipula teclados y computadoras a su antojo y con cierta malicia, procurando cubrirlos con un
+    velo optimista; su filosofía DIY los motiva, incluso, a dirigir sus propios videos musicales. Actualmente se
+    encuentran trabajando en su primer disco de larga duración. Buen pop con algo de sustancia masoquista, nada
+    mal para una banda formada en octubre del año pasado.
+
+- name: Speak!
+  slug: speak
+  description: |
+    Hijo de un madre judía y un jugador de ligas menores, Anthony Negrete, nativo de Moreno Valley,  descubrió
+    el filo de sus palabras, la astucia de su humor y claro, decidió hacer hiphop. Sus tracks tienen el delicado
+    (y no tan común) equilibro que sólo se consigue al emparejar interesantes beats, con un preciso flow. En
+    esto último se aprecia su verdadero oficio de MC, el énfasis en cualidades básicas; como la claridad y
+    velocidad, características old school que en SPEAK resultan refrescantes,  y que sin duda en vivo, serán más
+    que impresionantes. Sus rimas sagaces le valieron co-escribir con Kreayshawn, y colaborar en tracks de No
+    Doubt y Plies. 
+
+- name: Teenage Kicks
+  slug: teenage_kicks
+  description: |
+    Desde Tijuana llega esta banda de mentalidad lodosa a la que no le interesa tu pose burguesa. De una concisa
+    tradición hardcore de la ciudad fronteriza, nace esta banda de eternos adolescentes, capaz de dar directos
+    brutales. Han perfeccionado el acto de desprender sudor y energía en la forma del hardcore más completo.
+
+- name: Walle
+  slug: walle
+  description: |
+    Banda que procura no convertirse en una ola de ruidos saturados, sin embargo, no pueden luchar contra su
+    propia naturaleza. Compuesta por dos guitarras y una batería, Walle contempla géneros como el hardcore, el
+    rock y el screamo para luego encerrarse en el estudio y dar rienda suelta a su creatividad. Han editado tres
+    discos y un split junto a Nazareno El Violento.
+
+- name: White Ninja
+  slug: white_ninja
+  description: |
+    Sampleos, sintetizadores, voz, batería y bajo crean a White Ninja, banda de Monterrey que se da la labor de
+    construir música a partir de cortar y repetir microsampleos con gran precisión. Su EP debut atinadamente
+    llamado Guácala Los Modernos, representó una refrescante bocanada de aire para la escena nacional.

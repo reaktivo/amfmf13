@@ -1,104 +1,41 @@
 @import "vendor/normalize.css"
 @import "vendor/boilerplate.css"
 
-
 light-blue = #50ac97
 
+html, body, #bands
+  height 100%
+
 body
+  font-family 'Istok Web', sans-serif
   background #d8cfc6
   background-size cover
   color #fff
 
-h1.amf-logo
-  width 363px
-  height 275px
-  -webkit-transition all 0.4s ease-in-out
-  transition all 0.4s ease-in-out
-  position relative
-  margin 80px auto
-  &.small
-    width 300px
-    height 227px
-
-  > *
-    height 100%
-    width 0
-    padding-left 100%
-    overflow hidden
-    position absolute
-    top 0
-    left 0
-    opacity 0
-    -webkit-transform scale(2)
-    -moz-transform scale(2)
-    transform scale(2)
+#bands
+  .band
     background-size cover
-  .all
-    background-image url(../img/all.png)
-  .my
-    background-image url(../img/my.png)
-  .friends
-    background-image url(../img/friends.png)
-  .music-festival
-    background-image url(../img/music-festival.png)
-
-@media only screen and (max-width: 320px)
-  h1.amf-logo
-    width 300px
-    height 227px
-
-a.cartel
-  display block
-  margin 30px 0
-  img
-    display block
-    margin 0 auto
-    max-width 100%
-
-img.cartel
-  display block
-  margin 30px auto
-  max-width 100%
-
-
-#content
-  opacity 0
-  margin 0 auto 20px
-
-  .news
-    width 300px
-    padding 10px
-    margin 0 auto
-    ul
-      padding 0
-      list-style-type none
-      .date
-        color light-blue
-        text-transform uppercase
-        font-size 10px
-        font-weight bold
-        display block
-        margin 10px 0 0
-      .text
-        display block
-
-  .date
-    margin 20px auto 40px
-    width 320px
-    height 0
-    padding-top 30px
+    height 100%
     overflow hidden
-    background url(../img/date.png)
-
-  .tickets
-    margin-bottom 80px
-    text-align center
-    a
-      padding 5px
-      background #fff
-      color #10163a
-      font-size 24px
-      font-weight bold
-      text-decoration none
-      text-transform uppercase
-      letter-spacing 2px
+    .text
+      position fixed
+      margin 0 auto
+      padding 100px 0
+      text-align center
+      top 30%
+      width 100%
+      display block
+      min-width 530px
+      min-height 510px
+      background url("/img/back2.gif") no-repeat top center
+      h1, h2
+        font-size 72px
+        text-transform uppercase
+        margin 0
+        line-height 1em
+      h2
+        font-size 48px
+      .description
+        width 480px
+        margin 20px auto
+        font-size 13px

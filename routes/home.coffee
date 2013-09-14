@@ -1,12 +1,25 @@
 
-reveal = new Date("Thu, 08 Aug 2013 10:00:00 GMT-0700")
+band_css_template = """
+  .SLUG.band { background-image: url(/bands/1024/SLUG.jpg) }
+  @media only screen and (max-width: 640px) {
+    .SLUG.band { background-image: url(/bands/640/SLUG.jpg) }
+  }
+  #SLUG .SLUG.band .text {
+    display: block;
+    color: COLOR;
+  }
+
+"""
 
 module.exports = (app) ->
 
   app.get '/', (req, res) ->
-    countdown = (reveal - new Date) / 1000 / 60
+    res.render 'home/index', title: 'All My Friends 2013'
 
-    if countdown < 0 or req.query.show
-      res.render 'home/index', title: 'All My Friends 2013'
-    else
-      res.render 'home/black', { countdown }
+  app.get '/bands.css', (req, res) ->
+    res.type 'css'
+    for band in app.locals.bands
+      res.write band_css_template
+        .replace(/SLUG/g, band.slug)
+        .replace(/COLOR/g, band.color)
+    do res.end

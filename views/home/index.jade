@@ -2,13 +2,15 @@ extends ../layout
 
 block content
 
+  link(href="/bands.css", rel="stylesheet")
+
+  #bands
+    each band in bands
+      .band(class=band.slug, data-slug=band.slug, data-name=band.name)
+        .text
+          h1= band.name
+          if band.and
+            h2= band.and
+          .description= band.description
 
   a.cartel(href="http://www.superboletos.com/perl/redirect.pl?eventoId=14204")
-    img(src="/img/amf13-cartel.jpg")
-
-  #content
-
-    .news
-      a.twitter-timeline(href="https://twitter.com/infoamf", data-widget-id="361946584205893632") Tweets by @infoamf
-      script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")
-
