@@ -20,14 +20,14 @@ block content
 
   #lineup
     each band in bands
-      a(href="/bands/#{band.slug}")= band.name
+      a(href="/bands/#{band.slug}")!= band.name
 
   #bands
     each band in bands
       .band(class=band.slug, data-slug=band.slug, data-name=band.name)
         .text
-          h1= band.name
+          h1!= band.name
           if band.and
-            h2= band.and
-          p.description= band.description
+            h2!= band.and
+          p.description!= band.description
           .bg
