@@ -7,35 +7,165 @@ html, body, #bands
   height 100%
 
 body
-  font-family 'Istok Web', sans-serif
-  background #d8cfc6
+  font-family 'Raleway', sans-serif
+  background url("/img/bg.jpg")
   background-size cover
   color #fff
 
+#intro
+  padding-bottom 20px
+  .indio, h1.logo, .illustration
+    height 0
+    overflow hidden
+    margin 0 auto
+    display block
+  .indio
+    background url("/img/union_indio.png")
+    width 160px
+    padding-top 69px
+    margin 20px auto
+  h1.logo
+    background url("/img/amf_logo.png")
+    width 306px
+    padding-top 294px
+    position relative
+    animation LogoAnimation 5s ease-in-out infinite
+    -webkit-animation LogoAnimation 5s ease-in-out infinite
+    @media only screen and (max-width: 320px)
+      margin-top 15px
+      -webkit-animation none
+  .illustration
+    background url("/img/amf_illustration.png")
+    width 701px
+    padding-top 416px
+    margin -120px auto 0
+    position relative
+    @media only screen and (max-width: 320px)
+      display none
+  p.info
+    text-align center
+    color #000
+    padding 20px
+    span:after
+      content " / "
+    span:last-child:after
+      content ""
+    @media only screen and (max-width: 320px)
+      span
+        display block
+      span:after
+        content ""
+  .menu
+    position fixed
+    bottom 1px
+    margin 0 auto
+    z-index 300
+    width 100%
+    ul
+      list-style none
+      margin 0 auto
+      padding 0
+      li
+        display inline-block
+        box-sizing border-box
+        width 33.333%
+        a
+          display block
+          width 99.7%
+          text-align center
+          padding 0.6em 0
+          font-weight 700
+          color #fff
+          text-decoration none
+          background #000
+
+
+
+@keyframes LogoAnimation
+  0%
+    top -15px
+  50%
+    top 0
+  100%
+    top -15px
+
+#lineup
+  margin 20px
+  text-align center
+  background url("/img/grid.png")
+  padding-bottom 50px
+  margin-bottom -30px
+  a
+    display inline-block
+    text-transform uppercase
+    font-size 48px
+    font-weight 700
+    line-height 1.3em
+    margin 0 0.3em
+    color #111
+    text-decoration none
+    padding 0 0.2em
+    &:hover
+      color #d1c7c1
+      background #111
+      font-weight 700
+    @media only screen and (max-width: 320px)
+      display block
+      line-height 28px
+      font-size 20px
+
+
 #bands
   .band
-    background-size cover
+    display table
+    position relative
+    width 100%
     height 100%
     overflow hidden
+    background-size cover
+    text-align center
     .text
-      position fixed
-      margin 0 auto
-      padding 100px 0
-      text-align center
-      top 30%
-      width 100%
-      display block
-      min-width 530px
-      min-height 510px
-      background url("/img/back2.gif") no-repeat top center
+      display table-cell
+      vertical-align middle
+      text-shadow 1px 1px 1px rgba(0,0,0,1)
+      @media only screen and (max-width: 320px)
+        display block
+        vertical-align top
+        margin-top 20px
       h1, h2
         font-size 72px
+        font-weight 800
         text-transform uppercase
         margin 0
         line-height 1em
+        position relative
+        z-index 1
+        @media only screen and (max-width: 320px)
+          font-size 22px
       h2
-        font-size 48px
+        font-size 42px
+        font-weight 600
+        @media only screen and (max-width: 320px)
+          font-size 20px
       .description
         width 480px
         margin 20px auto
         font-size 13px
+        line-height 2em
+        position relative
+        z-index 1
+        @media only screen and (max-width: 320px)
+          width 300px
+          line-height 1.6em
+          text-align left
+      .bg
+        background url("/img/back.png") no-repeat center center
+        opacity 0.4
+        width 786px
+        height 646px
+        left 50%
+        top 50%
+        margin-left -393px
+        margin-top -323px
+        position absolute
+        z-index 0
