@@ -4,6 +4,8 @@ require 'ap'
 
 STDOUT.sync = true
 
+BANDS_YML = "locals/bands.yml"
+
 def resize(size, quality)
 
   size = size.to_s
@@ -39,7 +41,12 @@ namespace :resize do
 
   desc "Resize 640x"
   task "640" do
-    resize 640, 60
+    resize 640, 80
+  end
+
+  desc "Resize 320x"
+  task "320" do
+    resize 320, 80
   end
 
   desc "Resize all"
@@ -53,10 +60,13 @@ def extract_colors
     Dir.entries('.').each do |filename|
       next if File.directory? filename
       output = `convert #{filename} -resize 1x1! txt:-`
-      color = output.match(/#([\dA-F]{6})/)[1]
-      inverse = color.hex ^ 0xFFFFFF
+      color = output.match(/#([\dA-F]{6})/)[1].hex
+      inverse = color ^ 0xFFFFFF
       band = File.basename(filename, File.extname(filename))
-      colors[band] = "##{inverse.to_s(16)}"
+      colors[band] = {
+        color: "##{color.to_s(16)}",
+        inverse: "##{inverse.to_s(16)}"
+      }
     end
   end
   colors
@@ -67,11 +77,12 @@ namespace :colors do
   desc "Extract colors"
   task :extract do
     colors = extract_colors
-    bands = YAML.load_file('locals/bands.yml')
+    bands = YAML.load_file(BANDS_YML)
     bands.each do |band|
-      band["color"] = colors[band["slug"]]
+      band["color"] = colors[band["slug"]]["color"]
+      band["inverse"] = colors[band["slug"]]["inverse"]
     end
-    ap bands
+    File.open(BANDS_YML, 'w+') { |f| f.write(bands.to_yaml) }
   end
 
 end
