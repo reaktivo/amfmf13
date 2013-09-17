@@ -1,11 +1,14 @@
 { findWhere } = require 'underscore'
 
 title = "All My Friends 2013"
+prefix = ""
+if process.env.NODE_ENV is "production"
+  prefix = "http://files.reaktivo.com"
 
 band_css_template = """
-  .SLUG.band { background-image: url(/bands/landscape/SLUG.jpg) }
+  .SLUG.band { background-image: url(#{prefix}/bands/landscape/SLUG.jpg) }
   @media only screen and (orientation: portrait) {
-    .SLUG.band { background-image: url(/bands/portrait/SLUG.jpg) }
+    .SLUG.band { background-image: url(#{prefix}/bands/portrait/SLUG.jpg) }
   }
 
 """
