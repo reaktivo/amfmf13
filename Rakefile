@@ -7,7 +7,7 @@ STDOUT.sync = true
 BANDS_YML = "locals/bands.yml"
 
 task :deploy do
-  system "rsync -avzP bands reaktivo@reaktivo.com:amf.reaktivo.com"
+  system "rsync -avzP bands amfmf@media.amfmf.com:media.amfmf.com"
 end
 
 def resize(size, quality)
