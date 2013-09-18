@@ -3,7 +3,7 @@
 title = "All My Friends 2013"
 prefix = ""
 if process.env.NODE_ENV is "production"
-  prefix = "http://files.reaktivo.com"
+  prefix = "http://amf.reaktivo.com"
 
 band_css_template = """
   .SLUG.band { background-image: url(#{prefix}/bands/landscape/SLUG.jpg) }
