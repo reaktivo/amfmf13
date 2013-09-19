@@ -6,19 +6,18 @@ class window.Main
 
   history: yes
   title: "All My Friends 2013"
+  offset: if Modernizr.mq 'only screen and (max-width : 320px)' then 0 else -20
 
   constructor: ->
     if Modernizr.history
-      $('.band').closestToScroll (el) =>
+      $('*[data-path]').closestToScroll (el) =>
         return unless @history
-        if el is null
-          path = "/"
-        else
-          { slug } = el.data()
-          path = "/bands/#{slug}"
+        { path } = el.data()
         if document.location.pathname isnt path
           window.history.replaceState null, null, path
     $('a.lineup').smoothScroll()
+    $('a.partners').click @partners
+    $('#partners').hide()
     page "/", @top
     page "/lineup", @lineup
     page "/bands/:band", @band
@@ -27,12 +26,16 @@ class window.Main
   top: ->
     $.smoothScroll()
   lineup: ->
-    $.smoothScroll scrollTarget: "#lineup"
+    $.smoothScroll scrollTarget: "#lineup", offset: @offset
   band: (ctx) =>
     $.smoothScroll
       scrollTarget: ".band.#{ctx.params.band}"
       beforeScroll: => @history = no
       afterScroll: => @history = yes
+  partners: (e) =>
+    e.preventDefault()
+    $('#partners').slideDown()
+    $.smoothScroll scrollTarget: "#partners", offset: @offset
   viewport: ->
     if typeof window.innerWidth is 'undefined'
       width: document.documentElement.clientWidth
@@ -41,10 +44,9 @@ class window.Main
       width: window.innerWidth
       height: window.innerHeight
   layout: ->
-    if Modernizr.mq 'only screen and (max-width : 320px)'
-      size = @viewport()
-      console.log size
-      $('band').css {size}
+    if @is_mobile
+      { width, height } = @viewport()
+      $('band').css { width, height }
 
 $(document).ready ->
   window.app = {}

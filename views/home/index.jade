@@ -4,7 +4,7 @@ block content
 
   link(href="/bands.css", rel="stylesheet")
 
-  #intro
+  #intro(data-path="/")
     //.indio Unión Indio
     h1.logo All My Friends Music Festival
     .illustration
@@ -13,22 +13,29 @@ block content
         li: a.boletos(href="http://www.superboletos.com/perl/redirect.pl?eventoId=14204", target="_blank") Boletos
         li: a.lineup(href="/lineup") Lineup
         li: a.news(href="https://twitter.com/infoamf", target="_blank") Noticias
+        li: a.partners(href="#") Partners
     p.info
       span 16 de Noviembre 2013 / 1PM&nbsp;
       span @ Casa de la Cultura Tijuana
       span All ages
-    .media
-      a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
-      a(href="//despachodeproyectos.mx/"): img(src="/img/despacho.png")
-      a(href="//marvin.com.mx"): img(src="/img/marvin.png")
 
-  #lineup
+  #partners
+    h2 Partners
+    a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
+    a(href="//despachodeproyectos.mx"): img(src="/img/despacho.png")
+    a(href="//marvin.com.mx"): img(src="/img/marvin.png")
+    a(href="//nrmal.net"): img(src="/img/nrmal.png")
+    a(href="//imac.tijuana.gob.mx"): img(src="/img/imac.png")
+    a(href="//cotuco.com.mx"): img(src="/img/cotuco.png")
+    a(href="//aecontrol.com.mx"): img(src="/img/aecontrol.png")
+
+  #lineup(data-path="/lineup")
     each band in bands
       a(href="/bands/#{band.slug}")!= band.name
 
   #bands
     each band in bands
-      .band(class=band.slug, data-slug=band.slug, data-name=band.name)
+      .band(class=band.slug, data-slug=band.slug, data-name=band.name, data-path="/band/#{band.slug}")
         .text
           h1!= band.name
           if band.and
