@@ -20,7 +20,7 @@ module.exports = (app) ->
   app.get '/', index
   app.get '/lineup', index
 
-  app.get '/bands/:band', (req, res) ->
+  app.get '/band/:band', (req, res) ->
     band = findWhere app.locals.bands, slug: req.params.band
     if band
       res.render 'home/index', { title }
