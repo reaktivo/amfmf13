@@ -20,8 +20,8 @@ class window.Main
     $('#partners').hide()
     page "/", @top
     page "/lineup", @lineup
-    page "/bands/:band", @band
-    do page
+    page "/band/:band", @band
+    do page.start
     do @layout
   top: ->
     $.smoothScroll()
