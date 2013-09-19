@@ -25,13 +25,43 @@
 
 ;(function($, window, document, undefined) {
 
-  $.fn.closestToScroll = function(fn, options) {
+  function throttle(fn, threshhold, scope) {
+    threshhold || (threshhold = 250);
+    var last,
+        deferTimer;
+    return function () {
+      var context = scope || this;
+
+      var now = +new Date,
+          args = arguments;
+      if (last && now < last + threshhold) {
+        // hold on to it
+        clearTimeout(deferTimer);
+        deferTimer = setTimeout(function () {
+          last = now;
+          fn.apply(context, args);
+        }, threshhold);
+      } else {
+        last = now;
+      }
+    };
+  }
+
+  $.fn.closestToScroll = function(options, fn) {
+
+    if (typeof(options) === "function") {
+      fn = options;
+      options = {};
+    }
 
     options = $.extend({
-      maxDistance: 200
+      maxDistance: 200,
+      threshhold: 500
     }, options)
 
     var self = this, $window = $(window)
+
+    var fn = throttle(fn, options.threshhold)
 
     $window.scroll(function() {
 
