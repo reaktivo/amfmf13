@@ -40,5 +40,7 @@ block content
           h1!= band.name
           if band.and
             h2!= band.and
-          p.description!= band.description
+          .description
+            p!= band.description
+            p: a.listen(href=band.link, target="_blank") Escúchalo
           .bg
