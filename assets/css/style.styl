@@ -14,7 +14,7 @@ body
 
 #intro
   padding-bottom 20px
-  .indio, h1.logo, .illustration
+  .indio, h1#logo, #illustration
     height 0
     overflow hidden
     margin 0 auto
@@ -24,7 +24,7 @@ body
     width 160px
     padding-top 69px
     margin 20px auto
-  h1.logo
+  h1#logo
     background url("/img/amf_logo.png")
     width 306px
     padding-top 294px
@@ -34,7 +34,7 @@ body
     @media only screen and (max-width: 320px)
       margin-top 15px
       -webkit-animation none
-  .illustration
+  #illustration
     background url("/img/amf_illustration.png")
     width 701px
     padding-top 416px
@@ -42,7 +42,7 @@ body
     position relative
     @media only screen and (max-width: 320px)
       display none
-  p.info
+  #info
     text-align center
     color #000
     padding 20px
@@ -56,7 +56,7 @@ body
       span:after
         content ""
 
-  .menu
+  #menu
     position fixed
     bottom 1px
     margin 0 auto
@@ -177,6 +177,7 @@ body
           text-transform uppercase
           text-decoration none
           padding 0.5em
+          margin 0
           color #000
           background #fff
           border 1px solid #000

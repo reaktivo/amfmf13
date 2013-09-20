@@ -6,15 +6,15 @@ block content
 
   #intro(data-path="/")
     //.indio Unión Indio
-    h1.logo All My Friends Music Festival
-    .illustration
-    .menu
+    h1#logo All My Friends Music Festival
+    #illustration
+    #menu
       ul
         li: a.boletos(href="http://www.superboletos.com/perl/redirect.pl?eventoId=14204", target="_blank") Boletos
         li: a.lineup(href="/lineup") Lineup
         li: a.news(href="https://twitter.com/infoamf", target="_blank") Noticias
         li: a.partners(href="#") Partners
-    p.info
+    #info: p
       span 16 de Noviembre 2013 / 1PM&nbsp;
       span @ Casa de la Cultura Tijuana
       span All ages
@@ -42,5 +42,7 @@ block content
             h2!= band.and
           .description
             p!= band.description
-            p: a.listen(href=band.link, target="_blank") Escúchalo
+            p: a.listen(href=band.link, target="_blank", data-embed=band.embed) Escucha
+            .embed
+
           .bg

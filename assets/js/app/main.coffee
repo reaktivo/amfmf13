@@ -10,38 +10,61 @@ class window.Main
   colors: "#fe2dd8 #fcb265 #0c8ffa #a5d0b1 #3dfd11 #84ebcd #fad63e #f28dae".split ' '
 
   constructor: ->
+
+    ### Setup History ###
+
     if Modernizr.history
       $('*[data-path]').closestToScroll (el) =>
         return unless @history
         { path } = el.data()
         if document.location.pathname isnt path
           window.history.replaceState null, null, path
+      page "/", @top
+      page "/lineup", @lineup
+      page "/band/:band", @band
+      do page.start
+
+    ### Setup mouse event handlers ###
+
     $('a.lineup').smoothScroll()
     $('#lineup a').on
       mouseover: (e) => $(e.currentTarget).css color: @color()
       mouseout: (e) => $(e.currentTarget).css color: ''
-
-
     $('a.partners').click @partners
+    $('a.listen').click @listen
+
+    ### Setup layout ###
     $('#partners').hide()
-    page "/", @top
-    page "/lineup", @lineup
-    page "/band/:band", @band
-    do page.start
     do @layout
+
   top: ->
     $.smoothScroll()
+
+  listen: (e) ->
+    link = $(e.currentTarget)
+    embed = link.data 'embed'
+    if embed
+      e.preventDefault()
+      link.text 'Cargando...'
+      el = link.closest('.band').find('.embed')
+      el.hide().html(embed).find('iframe').load ->
+        el.slideDown()
+        link.parent().slideUp()
+
   lineup: ->
     $.smoothScroll scrollTarget: "#lineup", offset: @offset
+
   band: (ctx) =>
     $.smoothScroll
       scrollTarget: ".band.#{ctx.params.band}"
       beforeScroll: => @history = no
       afterScroll: => @history = yes
+
   partners: (e) =>
     e.preventDefault()
     $('#partners').slideDown()
     $.smoothScroll scrollTarget: "#partners", offset: @offset
+
   viewport: ->
     if typeof window.innerWidth is 'undefined'
       width: document.documentElement.clientWidth
@@ -49,6 +72,7 @@ class window.Main
     else
       width: window.innerWidth
       height: window.innerHeight
+
   layout: ->
     if @is_mobile
       { width, height } = @viewport()
