@@ -6,13 +6,12 @@ class window.Main
 
   history: yes
   title: "All My Friends 2013"
-  offset: if Modernizr.mq 'only screen and (max-width : 320px)' then 0 else -20
+  mobile: Modernizr.mq 'only screen and (max-width : 320px)'
   colors: "#fe2dd8 #fcb265 #0c8ffa #a5d0b1 #3dfd11 #84ebcd #fad63e #f28dae".split ' '
 
   constructor: ->
 
     ### Setup History ###
-
     if Modernizr.history
       $('*[data-path]').closestToScroll (el) =>
         return unless @history
@@ -25,7 +24,6 @@ class window.Main
       do page.start
 
     ### Setup mouse event handlers ###
-
     $('a.lineup').smoothScroll()
     $('#lineup a').on
       mouseover: (e) => $(e.currentTarget).css color: @color()
@@ -34,22 +32,30 @@ class window.Main
     $('a.listen').click @listen
 
     ### Setup layout ###
+    @offset = if @mobile then 0 else -40
     $('#partners').hide()
     do @layout
 
   top: ->
     $.smoothScroll()
 
-  listen: (e) ->
+  listen: (e) =>
     link = $(e.currentTarget)
     embed = link.data 'embed'
     if embed
       e.preventDefault()
+
+      # Set current text label
       link.text 'Cargando...'
+
+      # find band's embed container
       el = link.closest('.band').find('.embed')
-      el.hide().html(embed).find('iframe').load ->
+
+      # load and open
+      el.hide().html(embed).find('iframe').load =>
         el.slideDown()
         link.parent().slideUp()
+        if @mobile then $.smoothScroll scrollTarget: link, offset: @offset
 
   lineup: ->
     $.smoothScroll scrollTarget: "#lineup", offset: @offset
