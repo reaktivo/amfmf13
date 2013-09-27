@@ -11,6 +11,11 @@ class window.Main
 
   constructor: ->
 
+    ### Setup layout ###
+    @offset = if @mobile then 0 else -40
+    $('#partners').hide()
+    do @layout
+
     ### Setup History ###
     if Modernizr.history
       $('*[data-path]').closestToScroll (el) =>
@@ -18,6 +23,7 @@ class window.Main
         { path } = el.data()
         if document.location.pathname isnt path
           window.history.replaceState null, null, path
+          do @update_lineup_link
       page "/", @top
       page "/lineup", @lineup
       page "/band/:band", @band
@@ -30,11 +36,6 @@ class window.Main
       mouseout: (e) => $(e.currentTarget).css color: ''
     $('a.partners').click @partners
     $('a.listen').click @listen
-
-    ### Setup layout ###
-    @offset = if @mobile then 0 else -40
-    $('#partners').hide()
-    do @layout
 
   top: ->
     $.smoothScroll()
@@ -57,14 +58,25 @@ class window.Main
         link.parent().slideUp()
         if @mobile then $.smoothScroll scrollTarget: link, offset: @offset
 
-  lineup: ->
-    $.smoothScroll scrollTarget: "#lineup", offset: @offset
+  lineup: =>
+    $.smoothScroll
+      scrollTarget: "#lineup",
+      offset: @offset
+      afterScroll: @update_lineup_link
+
+  update_lineup_link: =>
+    opacity = +(document.location.pathname.indexOf('band') isnt -1)
+    $('#lineup-link').animate { opacity }
 
   band: (ctx) =>
+    do @update_lineup_link
     $.smoothScroll
       scrollTarget: ".band.#{ctx.params.band}"
+      speed: if ctx.init then 1 else undefined
       beforeScroll: => @history = no
-      afterScroll: => @history = yes
+      afterScroll: =>
+        @history = yes
+        do @update_lineup_link
 
   partners: (e) =>
     e.preventDefault()
