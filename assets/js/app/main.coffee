@@ -11,9 +11,15 @@ class window.Main
 
   constructor: ->
 
+    ### Setup element references ###
+    @window = $ window
+    @lineup = $ '#lineup'
+    @lineup_link = $ '#lineup-link'
+    @indio = $ '.indio-presenta'
+    @partners = $ '#partners'
+
     ### Setup layout ###
-    @offset = if @mobile then 0 else -40
-    $('#partners').hide()
+    @partners.hide()
     do @layout
 
     ### Setup History ###
@@ -25,13 +31,13 @@ class window.Main
           window.history.replaceState null, null, path
           do @update_lineup_link
       page "/", @top
-      page "/lineup", @lineup
+      page "/lineup", @lineup_scroll
       page "/band/:band", @band
       do page.start
 
     ### Setup mouse event handlers ###
     $('a.lineup').smoothScroll()
-    $('#lineup a').on
+    $('a', @lineup).on
       mouseover: (e) => $(e.currentTarget).css color: @color()
       mouseout: (e) => $(e.currentTarget).css color: ''
     $('a.partners').click @partners
@@ -58,15 +64,15 @@ class window.Main
         link.parent().slideUp()
         if @mobile then $.smoothScroll scrollTarget: link, offset: @offset
 
-  lineup: =>
+  lineup_scroll: =>
     $.smoothScroll
-      scrollTarget: "#lineup",
+      scrollTarget: @lineup,
       offset: @offset
       afterScroll: @update_lineup_link
 
   update_lineup_link: =>
     opacity = +(document.location.pathname.indexOf('band') isnt -1)
-    $('#lineup-link').animate { opacity }
+    @lineup_link.animate { opacity }
 
   band: (ctx) =>
     do @update_lineup_link
@@ -80,8 +86,8 @@ class window.Main
 
   partners: (e) =>
     e.preventDefault()
-    $('#partners').slideDown()
-    $.smoothScroll scrollTarget: "#partners", offset: @offset
+    @partners.slideDown()
+    $.smoothScroll scrollTarget: @partners, offset: @offset
 
   viewport: ->
     if typeof window.innerWidth is 'undefined'
@@ -91,10 +97,22 @@ class window.Main
       width: window.innerWidth
       height: window.innerHeight
 
-  layout: ->
-    if @is_mobile
+  layout: =>
+    if @mobile
+      @offset = 0
       { width, height } = @viewport()
       $('band').css { width, height }
+      @indio.hide()
+    else
+      @indio_threshold = @lineup.offset().top - @indio.outerHeight(yes)
+      @offset = 40
+      @window.scroll (e) =>
+        top = @window.scrollTop()
+        if top > @indio_threshold
+          @indio.css position: 'absolute', top: @indio_threshold
+        else
+          @indio.css position: 'fixed', top: 0
+
 
   color: =>
     @colors[Math.floor(Math.random() * @colors.length)]
