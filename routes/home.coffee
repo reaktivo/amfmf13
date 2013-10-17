@@ -1,9 +1,8 @@
 { findWhere } = require 'underscore'
+nconf = require 'nconf'
 
 title = "All My Friends 2013"
-prefix = ""
-if process.env.NODE_ENV is "production"
-  prefix = "//media.amfmf.com"
+prefix = nconf.get('assets:path') or ""
 
 band_css_template = """
   .SLUG.band { background-image: url(#{prefix}/bands/landscape/SLUG.jpg) }
