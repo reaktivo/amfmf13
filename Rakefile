@@ -7,7 +7,9 @@ STDOUT.sync = true
 BANDS_YML = "locals/bands.yml"
 
 task :deploy do
-  system "rsync -avzP bands amfmf@media.amfmf.com:media.amfmf.com"
+  system "git push origin master"
+  system "rsync -avzP bands drop:amfmf13"
+  system 'ssh drop "cd ~/amfmf13 && git pull && npm install && forever restartall"'
 end
 
 def resize(size, quality)
