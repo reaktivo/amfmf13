@@ -2,18 +2,15 @@ express = require 'express'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 load = require 'express-load'
-require 'js-yaml'
+nconf = require 'nconf'
+jsyaml = require 'js-yaml'
+{ join } = require 'path'
 
-{extend} = require 'underscore'
-{join} = require 'path'
+nconf.env().file(file: 'config.json')
 
 module.exports = app = express()
-
-# Try to load env vars
-try extend process.env, require './env' catch err
-
 app.set 'root', __dirname
-app.set 'port', process.env.PORT or 3000
+app.set 'port', nconf.get('PORT') or 3000
 app.set 'views', join __dirname, "views"
 app.set 'view engine', 'jade'
 app.set 'title', ""
