@@ -6,7 +6,9 @@ nconf = require 'nconf'
 jsyaml = require 'js-yaml'
 { join } = require 'path'
 
-nconf.env().file(file: 'config.json')
+nconf.env().file
+  file: 'config.json'
+  dir: __dirname
 
 module.exports = app = express()
 app.set 'root', __dirname
