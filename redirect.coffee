@@ -2,7 +2,7 @@
 
 # options.add = false to send www.example.com -> example.com
 
-module.exports = (options = {})
+module.exports = (options = {}) ->
 
   options.prefix or= 'www'
   options.add = yes if options.add is undefined
