@@ -1,14 +1,13 @@
 require 'yaml'
 require 'ap'
 
-
 STDOUT.sync = true
 
 BANDS_YML = "locals/bands.yml"
 
 task :deploy do
   system "git push origin master"
-  system "rsync -avzP bands drop:amfmf13"
+  system "rsync -avzP bands drop:amfmf13 --exclude original"
   system 'ssh drop "cd ~/amfmf13 && git pull && npm install && forever restartall"'
 end
 
