@@ -304,16 +304,16 @@
     tradición hardcore de la ciudad fronteriza, nace esta banda de eternos adolescentes, capaz de dar directos
     brutales. Han perfeccionado el acto de desprender sudor y energía en la forma del hardcore más completo.
 
-- name: Walle
-  slug: walle
-  link: http://walle.bandcamp.com/
-  embed: |
-    <iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album=1812676264/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="http://walle.bandcamp.com/album/qu-obo-darcowboy">¿Qué obo? Darcowboy by Walle</a></iframe>
-  description: |
-    Banda que procura no convertirse en una ola de ruidos saturados, sin embargo, no pueden luchar contra su
-    propia naturaleza. Compuesta por dos guitarras y una batería, Walle contempla géneros como el hardcore, el
-    rock y el screamo para luego encerrarse en el estudio y dar rienda suelta a su creatividad. Han editado tres
-    discos y un split junto a Nazareno El Violento.
+# - name: Walle
+#   slug: walle
+#   link: http://walle.bandcamp.com/
+#   embed: |
+#     <iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album=1812676264/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="http://walle.bandcamp.com/album/qu-obo-darcowboy">¿Qué obo? Darcowboy by Walle</a></iframe>
+#   description: |
+#     Banda que procura no convertirse en una ola de ruidos saturados, sin embargo, no pueden luchar contra su
+#     propia naturaleza. Compuesta por dos guitarras y una batería, Walle contempla géneros como el hardcore, el
+#     rock y el screamo para luego encerrarse en el estudio y dar rienda suelta a su creatividad. Han editado tres
+#     discos y un split junto a Nazareno El Violento.
 
 - name: White&nbsp;Ninja
   slug: white_ninja
