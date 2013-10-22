@@ -66,7 +66,7 @@ class window.Main
 
   lineup_scroll: =>
     $.smoothScroll
-      scrollTarget: @lineup,
+      scrollTarget: @lineup
       offset: @offset
       afterScroll: @update_lineup_link
 
@@ -78,8 +78,9 @@ class window.Main
     do @update_lineup_link
     $.smoothScroll
       scrollTarget: ".band.#{ctx.params.band}"
-      speed: if ctx.init then 1 else undefined
-      beforeScroll: => @history = no
+      speed: 1 if ctx.init
+      beforeScroll: =>
+        @history = no
       afterScroll: =>
         @history = yes
         do @update_lineup_link
@@ -105,7 +106,7 @@ class window.Main
       @indio.hide()
     else
       @indio_threshold = @lineup.offset().top - @indio.outerHeight(yes)
-      @offset = 40
+      @offset = -20
       @window.scroll (e) =>
         top = @window.scrollTop()
         if top > @indio_threshold
