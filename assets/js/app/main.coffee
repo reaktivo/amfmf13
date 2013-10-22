@@ -40,7 +40,7 @@ class window.Main
     $('a', @lineup).on
       mouseover: (e) => $(e.currentTarget).css color: @color()
       mouseout: (e) => $(e.currentTarget).css color: ''
-    $('a.partners').click @partners
+    $('a.partners').click @toggle_partners
     $('a.listen').click @listen
 
   top: ->
@@ -84,9 +84,9 @@ class window.Main
         @history = yes
         do @update_lineup_link
 
-  partners: (e) =>
+  toggle_partners: (e) =>
     e.preventDefault()
-    @partners.slideDown()
+    @partners.slideToggle()
     $.smoothScroll scrollTarget: @partners, offset: @offset
 
   viewport: ->
