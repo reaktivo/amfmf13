@@ -330,7 +330,9 @@
 - name: Trillones
   slug: trillones
   link: http://indiangoldrecords.bandcamp.com/album/trillones-from-the-trees-to-the-satellites-ep-igd004
-  description: ""
+  description: |
+    Polo Vega, quien integrará el dueto Ella Tiene Dos Androides, lanzó su primer material como solista bajo el seudónimo de
+    Trillones. <br><br>"From The Trees To The Satellites" fue coeditado por Indian Gold Records y Static Discos. De acuerdo con la página de Static, Trillones suena a "la mezcla del dance pop de Gui Boratto y las inclinaciones ambientales de Pantha Du Prince, enlazados por el twee característico de Vega".
 
 # - name: Walle
 #   slug: walle
