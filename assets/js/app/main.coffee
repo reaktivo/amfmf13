@@ -47,7 +47,6 @@ class window.Main
     elements = $('*[data-path]')
 
     elements.each (i, el) =>
-      console.log $(el).data('path')
       page $(el).data('path'), (ctx) =>
         $.smoothScroll
           scrollTarget: "*[data-path='#{ctx.pathname}']"
@@ -68,6 +67,15 @@ class window.Main
       mouseover: (e) => $(e.currentTarget).css color: @color()
       mouseout: (e) => $(e.currentTarget).css color: ''
     $('a.listen').click @listen
+    $('.up a').click (e) =>
+      e.preventDefault()
+      scrollTop = @window.scrollTop()
+      $($('*[data-marker]').get().reverse()).each ->
+        $el = $ this
+        if scrollTop > $el.offset().top
+          console.log this
+          page $el.data 'path'
+          return no
 
   setup_map: =>
     @map = new Map $('#map-container')[0],
