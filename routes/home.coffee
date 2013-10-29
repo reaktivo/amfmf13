@@ -2,15 +2,6 @@
 nconf = require 'nconf'
 
 title = "All My Friends 2013"
-prefix = nconf.get('assets:path') or ""
-
-band_css_template = """
-  .SLUG.band { background-image: url(#{prefix}/bands/landscape/SLUG.jpg) }
-  @media only screen and (orientation: portrait) {
-    .SLUG.band { background-image: url(#{prefix}/bands/portrait/SLUG.jpg) }
-  }
-
-"""
 
 module.exports = (app) ->
 
@@ -22,18 +13,7 @@ module.exports = (app) ->
   app.get '/partners', index
   app.get '/location', index
 
-  app.get '/band/:band', (req, res) ->
+  app.get '/band/:band', (req, res, next) ->
     band = findWhere app.locals.bands, slug: req.params.band
-    if band
-      res.render 'home/index', { title }
-    else
-      res.redirect '/'
-
-  app.get '/bands.css', (req, res) ->
-    res.type 'css'
-    for band in app.locals.bands
-      res.write band_css_template
-        .replace(/SLUG/g, band.slug)
-        .replace(/INVERSE/g, band.inverse)
-        .replace(/COLOR/g, band.color)
-    do res.end
+    return do next unless band
+    res.render 'home/band', { band, initial: yes, title: "#{band.name} — #{title}" }
