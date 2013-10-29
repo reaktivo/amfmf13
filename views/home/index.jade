@@ -15,44 +15,92 @@ block content
     #illustration
     #menu
       ul
-        li: a.boletos(href="http://web.superboletos.com:8080/SuperBoletos/MONTERREY/MUSICAL/ALL-MY-FRIENDS-MUSIC-FESTIVAL-/gzSkFJX1Vmz0qRNwe6oSBDEV3g", target="_blank") Boletos
-        li: a.news(href="https://twitter.com/infoamf", target="_blank") Noticias
-        li: a.partners(href="#partners") Partners
+        li: a(href="http://web.superboletos.com:8080/SuperBoletos/MONTERREY/MUSICAL/ALL-MY-FRIENDS-MUSIC-FESTIVAL-/gzSkFJX1Vmz0qRNwe6oSBDEV3g", target="_blank") Boletos
+        li: a(href="https://twitter.com/infoamf", target="_blank") Noticias
+        li: a(href="/festival") Festival
+        li.up: a(href="/lineup") ↑
     #info: p
-      span 16 de Noviembre 2013 / 1PM&nbsp;
-      span @ Casa de la Cultura Tijuana
+      span Sábado 16 de Noviembre / 1PM - 2AM&nbsp;
+      span: a(href="/location") @ Casa de la Cultura Tijuana
       span All ages
-
-  #partners
-    h2 Una iniciativa de
-    a(href="#"): img(src="/img/amf.png")
-    a(href="//nrmal.net"): img(src="/img/nrmal.png")
-
-    h2 Colaboradores
-    a(href="//aecontrol.com.mx"): img(src="/img/aecontrol.png")
-    a(href="//imac.tijuana.gob.mx"): img(src="/img/imac.png")
-    a(href="//cotuco.com.mx"): img(src="/img/cotuco.png")
-    a(href="//despachodeproyectos.mx"): img(src="/img/despacho.png")
-    a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
-
-    h2 Medios Asociados
-    a(href="//lifeboxset.com"): img(src="/img/lifeboxset.png")
-    a(href="//marvin.com.mx"): img(src="/img/marvin.png")
-    a(href="//www.indierocks.mx"): img(src="/img/indierocks.png")
-    a(href="//8106.tv"): img(src="/img/8106.png")
-    a(href="//noiselab.com"): img(src="/img/noiselab.png")
-    a(href="//www.deezer.com/en/"): img(src="/img/deezer.png")
-    a(href="//filtermexico.com"): img(src="/img/filter.png")
-    a(href="//www.turistalibre.com/"): img(src="/img/turistalibre.png")
-    a(href="//mehaceruido.com"): img(src="/img/mehaceruido.png")
-    a(href="#"): img(src="/img/panico.png")
-    a(href="//pijamasurf.com"): img(src="/img/pijamasurf.png")
-    a(href="//www.rocketsmusik.com"): img(src="/img/rockets.png")
-    a(href="//thecitylovesyou.com"): img(src="/img/tcly.png")
 
   #lineup(data-path="/lineup")
     each band in bands
       a(href="/band/#{band.slug}")!= band.name
+
+  #location(data-path="/location")
+    #map-info
+      h2 Casa de la Cultura
+      p Av París y Lisboa 5, Col. Altamira <br>Tijuana, Baja California, Mexico
+      a(href="http://maps.apple.com/?q=paris+y+lisboa+no.+5,+altamira,+tijuana", target="_blank") Ver mapa en otra ventana
+    #map-container
+      h2 Casa de la Cultura Tijuana
+      p Av París y Lisboa 5, Altamira, Del Centro, Tijuana, Baja California, Mexico
+
+  #partners(data-path="/partners")
+    .block
+      h2 Una iniciativa de:
+      a(href="#"): img(src="/img/amf.png")
+      a(href="//nrmal.net"): img(src="/img/nrmal.png")
+
+    .block
+      h2 Colaboradores:
+      a(href="//aecontrol.com.mx"): img(src="/img/aecontrol.png")
+      a(href="//imac.tijuana.gob.mx"): img(src="/img/imac.png")
+      a(href="//cotuco.com.mx"): img(src="/img/cotuco.png")
+      a(href="//despachodeproyectos.mx"): img(src="/img/despacho.png")
+      a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
+
+    .block
+      h2 Medios Asociados:
+      a(href="//lifeboxset.com"): img(src="/img/lifeboxset.png")
+      a(href="//marvin.com.mx"): img(src="/img/marvin.png")
+      a(href="//www.indierocks.mx"): img(src="/img/indierocks.png")
+      a(href="//8106.tv"): img(src="/img/8106.png")
+      a(href="//noiselab.com"): img(src="/img/noiselab.png")
+      a(href="//www.deezer.com/en/"): img(src="/img/deezer.png")
+      a(href="//filtermexico.com"): img(src="/img/filter.png")
+      a(href="//www.turistalibre.com/"): img(src="/img/turistalibre.png")
+      a(href="//mehaceruido.com"): img(src="/img/mehaceruido.png")
+      a(href="#"): img(src="/img/panico.png")
+      a(href="//pijamasurf.com"): img(src="/img/pijamasurf.png")
+      a(href="//www.rocketsmusik.com"): img(src="/img/rockets.png")
+      a(href="//thecitylovesyou.com"): img(src="/img/tcly.png")
+
+  #festival(data-path="/festival")
+
+    :markdown
+      Este año, al igual que en las anteriores ediciones, se hace un esfuerzo para
+      poner en el foco de atención al **punk tijuanense**. Pasando por Tijuana No, BeAm,
+      Mercado Negro y muchas bandas más, Tijuana siempre ha sido un semillero para
+      las propuestas más bélicas de punk nacional, por eso nos enorgullece que bandas
+      como **Calafia Puta, Teenage Kicks, Biocrisis, Walle y Bonebreaker**.
+
+    :markdown
+      La estoniana **María Minerva visita por primera vez México**, artista de uno de los
+      sellos angelinos más importantes del underground internacional, **Not Not Fun**,
+      María Minerva ha creado un seguimiento importante con su música de pop experimental
+      y bailable. AMFMF solidifica su **relación con la escena experimental de Los Ángeles,
+      trayendo a Tijuana a Deep Magic, Matthew Sullivan y M. Geddes Gengras, este último
+      con reciente lanzamiento en el sello mexicano Umor Rex**.
+
+    :markdown
+      El talento de rock alternativo de bandas bajacalifornianas como **Ibi Ego, Celofán,
+      Ramona, Rancho Shampoo, Letters From Readers, Siete Catorce y Electric Healing
+      Sound** también confirman la relevancia de Baja California con propuestas innovadoras
+      de indie rock y música&nbsp;electrónica.
+
+    :markdown
+      **La banda chilena Ases Falsos**, con un rock alternativo inspirado en la canción del
+      cantautor Juan Gabriel, hace una parada en Tijuana como parte de su gira y visita
+      por primera vez en México. El disco debut de Ases Falsos, Juventud Americana, fue
+      considerado por el blog Club Fonograma como el mejor disco de música
+      iberoamericana del 2012.
+
+    :markdown
+      **LAO y DJ Smurphy** reconocidos productores de música electrónica underground de la
+      ciudad de México aterrizan en Tijuana para poner a bailar a los asistentes del
+      All My Friends.
 
   #bands
     each band in bands
@@ -67,3 +115,5 @@ block content
             .embed
 
           .bg
+
+

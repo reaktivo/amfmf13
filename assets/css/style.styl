@@ -72,11 +72,23 @@ body
     text-align center
     color #000
     padding 20px
+    font-size 28px
+    font-weight bold
+    a
+      color #000
+      background #4afa35
+      text-decoration none
+      &:hover
+        color #4afa35
+        background #000
+
     span:after
       content " / "
     span:last-child:after
       content ""
     @media only screen and (max-width: 320px)
+      font-size 20px
+      padding-top 0
       span
         display block
       span:after
@@ -95,7 +107,9 @@ body
       li
         display inline-block
         box-sizing border-box
-        width 33.33%
+        width 28%
+        &.up
+          width 16%
         a
           display block
           width 99.7%
@@ -121,23 +135,92 @@ body
 
 #partners
   color #000
-  background #fff
   overflow hidden
   text-align center
   text-transform uppercase
-  width 840px
   max-width 100%
-  margin 0 auto 20px
-
   img
-    margin 0 20px
+    max-width 100%
+  .block
+    padding 20px
+    background #fff
+    margin 20px
+    @media only screen and (max-width: 320px)
+      margin 2px 0 0
+
+#location
+  color #000
+  min-height 300px
+  background url("/img/location-bg.png")
+  overflow hidden
+  display table
+  width 100%
+  #map-info
+    position relative
+    display table-cell
+    vertical-align middle
+    width 25%
+    box-sizing border-box
+    padding 20px
+    text-align center
+    h2
+      font-family 'Linden Hill', serif
+      margin-top 0
+    p
+      font-family 'Linden Hill'
+    a
+      position absolute
+      bottom 0
+      left 0
+      right 0
+      color #000
+      background #4afa35
+      padding 10px
+      text-transform uppercase
+      text-decoration none
+      font-size 12px
+      line-height 48px
+      font-weight bold
+      font-family Raleway, sans-serif
+  #map-container
+    height 300px
+    width 75%
+    display table-cell
+
+@media only screen and (max-width: 767px)
+  #location
+    display block
+    #map-info, #map-container
+      width auto
+      display block
+    #map-info
+      padding-bottom 52px
+      a
+        line-height 32px
+
+
+#festival
+  -moz-column-count 2
+  -webkit-column-count 2
+  column-count 2
+  -moz-column-gap 80px
+  -webkit-column-gap 80px
+  column-gap 80px
+  padding 80px
+  color #000
+  background url("/img/amf-transparent.png") no-repeat center center
+  p
+    margin 0 0 20px
+  @media only screen and (max-width: 767px)
+    -moz-column-count 1
+    -webkit-column-count 1
+    column-count 1
+    padding 20px
 
 #lineup
   margin 20px
   text-align center
   background url("/img/grid.png")
-  padding-bottom 50px
-  margin-bottom -30px
   a
     display inline-block
     text-transform uppercase
