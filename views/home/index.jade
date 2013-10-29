@@ -18,11 +18,11 @@ block content
       span: a(href="/location") @ Casa de la Cultura Tijuana
       span All ages
 
-  #lineup(data-path="/lineup", data-marker)
+  #lineup(title="Lineup", data-path="/lineup", data-marker)
     each band in bands
       a(href="/band/#{band.slug}")!= band.name
 
-  #location(data-path="/location", data-marker)
+  #location(title="Ubicación", data-path="/location", data-marker)
     #map-info
       h2 Casa de la Cultura
       p Av París y Lisboa 5, Col. Altamira <br>Tijuana, Baja California, Mexico
@@ -31,7 +31,7 @@ block content
       h2 Casa de la Cultura Tijuana
       p Av París y Lisboa 5, Altamira, Del Centro, Tijuana, Baja California, Mexico
 
-  #festival(data-path="/festival", data-marker)
+  #festival(title="El Festival", data-path="/festival", data-marker)
 
     :markdown
       Este año, al igual que en las anteriores ediciones, se hace un esfuerzo para
@@ -68,7 +68,7 @@ block content
 
 
 
-  #partners(data-path="/partners", data-marker)
+  #partners(title="Partners", data-path="/partners", data-marker)
     .block
       h2 Una iniciativa de:
       a(href="#"): img(src="/img/amf.png")

@@ -58,8 +58,10 @@ class window.Main
 
     elements.each (i, el) =>
       page $(el).data('path'), (ctx) =>
+        target = $ "*[data-path='#{ctx.pathname}']"
+        @grab_title(target)
         $.smoothScroll
-          scrollTarget: "*[data-path='#{ctx.pathname}']"
+          scrollTarget: target
           speed: 1 if ctx.init
           beforeScroll: => @history = no
           afterScroll:  => @history = yes
@@ -69,6 +71,7 @@ class window.Main
       { path } = el.data()
       if document.location.pathname isnt path
         window.history.replaceState null, null, path
+        @grab_title(el)
     do page.start
 
   setup_events: =>
@@ -127,6 +130,12 @@ class window.Main
         if @mobile then $.smoothScroll(scrollTarget: link)
 
   ### Helpers ###
+
+  grab_title: (el) =>
+    title = el.attr 'title'
+    str = @title
+    str = "#{title} — #{str}" if title
+    document.title = str
 
   viewport: ->
     if typeof window.innerWidth is 'undefined'
