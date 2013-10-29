@@ -2,12 +2,6 @@ extends ../layout
 
 block content
 
-  link(href="/bands.css", rel="stylesheet")
-
-  a(href="/lineup")#lineup-link
-    .arrow ↑
-    .text Lineup
-
   .indio-presenta Indio Presenta
 
   #intro(data-path="/", data-marker)
@@ -36,36 +30,6 @@ block content
     #map-container
       h2 Casa de la Cultura Tijuana
       p Av París y Lisboa 5, Altamira, Del Centro, Tijuana, Baja California, Mexico
-
-  #partners(data-path="/partners", data-marker)
-    .block
-      h2 Una iniciativa de:
-      a(href="#"): img(src="/img/amf.png")
-      a(href="//nrmal.net"): img(src="/img/nrmal.png")
-
-    .block
-      h2 Colaboradores:
-      a(href="//aecontrol.com.mx"): img(src="/img/aecontrol.png")
-      a(href="//imac.tijuana.gob.mx"): img(src="/img/imac.png")
-      a(href="//cotuco.com.mx"): img(src="/img/cotuco.png")
-      a(href="//despachodeproyectos.mx"): img(src="/img/despacho.png")
-      a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
-
-    .block
-      h2 Medios Asociados:
-      a(href="//lifeboxset.com"): img(src="/img/lifeboxset.png")
-      a(href="//marvin.com.mx"): img(src="/img/marvin.png")
-      a(href="//www.indierocks.mx"): img(src="/img/indierocks.png")
-      a(href="//8106.tv"): img(src="/img/8106.png")
-      a(href="//noiselab.com"): img(src="/img/noiselab.png")
-      a(href="//www.deezer.com/en/"): img(src="/img/deezer.png")
-      a(href="//filtermexico.com"): img(src="/img/filter.png")
-      a(href="//www.turistalibre.com/"): img(src="/img/turistalibre.png")
-      a(href="//mehaceruido.com"): img(src="/img/mehaceruido.png")
-      a(href="#"): img(src="/img/panico.png")
-      a(href="//pijamasurf.com"): img(src="/img/pijamasurf.png")
-      a(href="//www.rocketsmusik.com"): img(src="/img/rockets.png")
-      a(href="//thecitylovesyou.com"): img(src="/img/tcly.png")
 
   #festival(data-path="/festival", data-marker)
 
@@ -102,18 +66,41 @@ block content
       ciudad de México aterrizan en Tijuana para poner a bailar a los asistentes del
       All My Friends.
 
-  #bands
-    each band in bands
-      .band(class=band.slug, data-slug=band.slug, data-name=band.name, data-path="/band/#{band.slug}")
-        .text
-          h1!= band.name
-          if band.and
-            h2!= band.and
-          .description
-            p!= band.description
-            p: a.listen(href=band.link, target="_blank", data-embed=band.embed) Escucha
-            .embed
 
-          .bg
+
+  #partners(data-path="/partners", data-marker)
+    .block
+      h2 Una iniciativa de:
+      a(href="#"): img(src="/img/amf.png")
+      a(href="//nrmal.net"): img(src="/img/nrmal.png")
+
+    .block
+      h2 Colaboradores:
+      a(href="//aecontrol.com.mx"): img(src="/img/aecontrol.png")
+      a(href="//imac.tijuana.gob.mx"): img(src="/img/imac.png")
+      a(href="//cotuco.com.mx"): img(src="/img/cotuco.png")
+      a(href="//despachodeproyectos.mx"): img(src="/img/despacho.png")
+      a(href="//noisey.vice.com/es_mx"): img(src="/img/noisey.png")
+
+    .block
+      h2 Medios Asociados:
+      a(href="//lifeboxset.com"): img(src="/img/lifeboxset.png")
+      a(href="//marvin.com.mx"): img(src="/img/marvin.png")
+      a(href="//www.indierocks.mx"): img(src="/img/indierocks.png")
+      a(href="//8106.tv"): img(src="/img/8106.png")
+      a(href="//noiselab.com"): img(src="/img/noiselab.png")
+      a(href="//www.deezer.com/en/"): img(src="/img/deezer.png")
+      a(href="//filtermexico.com"): img(src="/img/filter.png")
+      a(href="//www.turistalibre.com/"): img(src="/img/turistalibre.png")
+      a(href="//mehaceruido.com"): img(src="/img/mehaceruido.png")
+      a(href="#"): img(src="/img/panico.png")
+      a(href="//pijamasurf.com"): img(src="/img/pijamasurf.png")
+      a(href="//www.rocketsmusik.com"): img(src="/img/rockets.png")
+      a(href="//thecitylovesyou.com"): img(src="/img/tcly.png")
+
+  #band(data-initial=locals.initial)
+    a(href="/lineup")#lineup-btn Lineup
+    .container
+      block band
 
 
