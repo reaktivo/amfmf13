@@ -1,0 +1,17 @@
+extends ./index
+block band
+  .band(id=band.slug)
+    style.
+      ##{band.slug} { background-image: url(/bands/landscape/#{band.slug}.jpg) }
+      @media only screen and (orientation: portrait) {
+        ##{band.slug} { background-image: url(/bands/portrait/#{band.slug}.jpg) }
+      }
+    .text
+      h1!= band.name
+      if band.and
+        h2!= band.and
+      .description
+        p!= band.description
+        p: a.listen(href=band.link, target="_blank", data-embed=band.embed) Escucha
+        .embed
+      .bg

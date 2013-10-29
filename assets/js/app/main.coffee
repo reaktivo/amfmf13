@@ -16,8 +16,8 @@ class window.Main
   constructor: ->
     @window = $ window
     @lineup = $ '#lineup'
-    @lineup_btn = $ '#lineup-link'
     @indio = $ '.indio-presenta'
+    @band = $ '#band'
     do @setup_layout
     do @setup_history
     do @setup_events
@@ -26,6 +26,7 @@ class window.Main
   ### Setup ###
 
   setup_layout: =>
+    @band.hide()
     if @mobile
       $.fn.smoothScroll.defaults.offset = 0
       { width, height } = @viewport()
@@ -44,6 +45,15 @@ class window.Main
   setup_history: =>
     return unless Modernizr.history
 
+    page '/lineup', (ctx, next) =>
+      @history = yes
+      do @hide_band
+      do next
+
+    page '/band/:band', (ctx) =>
+      @history = no
+      @show_band ctx.params.band, ctx.init
+
     elements = $('*[data-path]')
 
     elements.each (i, el) =>
@@ -51,22 +61,21 @@ class window.Main
         $.smoothScroll
           scrollTarget: "*[data-path='#{ctx.pathname}']"
           speed: 1 if ctx.init
-          beforeScroll: => @history = no and do @toggle_lineup_btn
-          afterScroll:  => @history = yes and do @toggle_lineup_btn
+          beforeScroll: => @history = no
+          afterScroll:  => @history = yes
 
     elements.closestToScroll (el) =>
       return unless @history
       { path } = el.data()
       if document.location.pathname isnt path
         window.history.replaceState null, null, path
-        do @toggle_lineup_btn
     do page.start
 
   setup_events: =>
     $('a', @lineup).on
       mouseover: (e) => $(e.currentTarget).css color: @color()
       mouseout: (e) => $(e.currentTarget).css color: ''
-    $('a.listen').click @listen
+    $(document).on('click', 'a.listen', @listen)
     $('.up a').click (e) =>
       e.preventDefault()
       scrollTop = @window.scrollTop()
@@ -91,6 +100,14 @@ class window.Main
 
   ### Event Handlers ###
 
+  show_band: (band) =>
+    return @band.show() if $("##{band}").length > 0
+    $('.container', @band).load "/band/#{band} .band", (html) =>
+      document.title = $(html).filter('title').text()
+      @band.fadeIn()
+
+  hide_band: => @band.fadeOut()
+
   listen: (e) =>
     link = $(e.currentTarget)
     embed = link.data 'embed'
@@ -108,10 +125,6 @@ class window.Main
         el.slideDown()
         link.parent().slideUp()
         if @mobile then $.smoothScroll(scrollTarget: link)
-
-  toggle_lineup_btn: =>
-    opacity = !document.location.pathname.match('^/(lineup)?$')
-    @lineup_btn.animate { opacity }
 
   ### Helpers ###
 
