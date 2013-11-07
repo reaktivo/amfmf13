@@ -18,20 +18,11 @@ block content
       span: a(href="/location") @ Casa de la Cultura Tijuana
       span All ages
 
-  #lineup(title="Lineup", data-path="/lineup", data-marker)
+  #lineup(data-title="Lineup", data-path="/lineup", data-marker)
     each band in bands
       a(href="/band/#{band.slug}")!= band.name
 
-  #location(title="Ubicación", data-path="/location", data-marker)
-    #map-info
-      h2 Casa de la Cultura
-      p Av París y Lisboa 5, Col. Altamira <br>Tijuana, Baja California, Mexico
-      a(href="http://maps.apple.com/?q=paris+y+lisboa+no.+5,+altamira,+tijuana", target="_blank") Ver mapa en otra ventana
-    #map-container
-      h2 Casa de la Cultura Tijuana
-      p Av París y Lisboa 5, Altamira, Del Centro, Tijuana, Baja California, Mexico
-
-  #festival(title="El Festival", data-path="/festival", data-marker)
+  #festival(data-title="El Festival", data-path="/festival", data-marker)
 
     :markdown
       Este año, al igual que en las anteriores ediciones, se hace un esfuerzo para
@@ -66,9 +57,83 @@ block content
       ciudad de México aterrizan en Tijuana para poner a bailar a los asistentes del
       All My Friends.
 
+  #location(data-title="Ubicación", data-path="/location", data-marker)
+    #map-info
+      h2 Casa de la Cultura
+      a.map-link(href="#", data-map-marker="[32.531499, -117.05232]", data-map-default) Av París y Lisboa 5, Col. Altamira <br>Tijuana, Baja California, Mexico
+      a.btn(href="http://maps.apple.com/?q=paris+y+lisboa+no.+5,+altamira,+tijuana", target="_blank") Ver mapa en otra ventana
+    #map-container
+      h2 Casa de la Cultura Tijuana
+      p Av París y Lisboa 5, Altamira, Del Centro, Tijuana, Baja California, Mexico
 
+  #showcases(data-title="Showcases", data-path="/showcases", data-marker)
+    h2 Showcases
+    .events
+      .block
+        span.date Jueves 14 — 20:00
+        h3 Distópicos
+        h4 Presentado por Otras Obras
+        p.info: a(href="#", data-map-marker="[32.53064, -117.034655]") @ Otras Obras — Francisco I. Madero 1250, Centro (Ver en Mapa)
+        :markdown
+          Exhibición de vídeos por:
 
-  #partners(title="Partners", data-path="/partners", data-marker)
+          - Terma Pavlovic
+          - Daniel Rosas
+          - Cristian Franco
+          - Israel Ledezma
+          - Joey Muñoz
+          - Carlos Matsuo.
+
+          Música por:
+
+          - Lucifago (TJ)
+          - COMBAT! (LA)
+          - Sin Amigos (MXL)
+
+      .block
+        span.date Viernes 15 — 21:00
+        h3 Caliruta
+        h4 Presentado por Goldenvoice
+        p.info: a(href="#", data-map-marker="[32.53064, -117.034655]") @ Moustache Bar — Francisco I. Madero 1249, Centro
+
+        :markdown
+          Música por:
+
+          - FMLYBND (Sta. Barbara)
+          - KIEV (Isla Vista)
+          - Siberium (TJ)
+
+      .block
+        span.date Domingo 17 (Noche de Sábado) — 02:00
+        h3 After Party
+        h4 Presentado por NAAFI
+        p.info: a(href="#", data-map-marker="[32.527482,-117.02258]") @ Bar 664 — Paseo de los Heroes y E. Castellanos R.
+
+        :markdown
+          Música por:
+
+          - Paul Marmota
+          - XS
+          - Espectral
+          - Mexican Jihad
+
+      .block
+        span.date Domingo 17 de Noviembre — 15:00
+        h3 Despertando en Casa de Alguien Showcase
+        h4 Presentado por O.M.T y Raymondstock
+        p.info: a(href="#", data-map-marker="[32.505434,-117.001312]") @ Calle Tehuacán #113, Colonia Hipódromo
+
+        :markdown
+          Música por:
+
+          - Matilda Manzana
+          - San Pedro El Cortéz
+          - DDA
+          - O Tortuga Mr. Void
+          - Late Nite Howl
+          - *Invitados Especiales*
+
+  #partners(data-title="Partners", data-path="/partners", data-marker)
     .block
       h2 Una iniciativa de:
       a(href="#"): img(src="/img/amf.png")

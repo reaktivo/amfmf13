@@ -12,6 +12,7 @@ module.exports = (app) ->
   app.get '/festival', index
   app.get '/partners', index
   app.get '/location', index
+  app.get '/showcases', index
 
   app.get '/band/:band', (req, res, next) ->
     band = findWhere app.locals.bands, slug: req.params.band

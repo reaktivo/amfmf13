@@ -90,16 +90,27 @@ class window.Main
           return no
 
   setup_map: =>
+    pos = $('*[data-map-default]').data('map-marker')
+    latlng = new LatLng(pos[0], pos[1])
     @map = new Map $('#map-container')[0],
-      center: new LatLng(32.531499, -117.05232)
+      center: latlng
       scrollwheel: no
       zoom: 15
-      draggable: no
+      draggable: not Modernizr.touch
     @marker = new Marker
-      position: new LatLng(32.531499, -117.05232)
+      position: latlng
       map: @map
 
-    $(window).resize => @map.setCenter @marker.getPosition()
+    $('*[data-map-marker]').each (i, a) =>
+      $(a).click (e) =>
+        e.preventDefault()
+        pos = $(e.currentTarget).data('map-marker')
+        latlng = new LatLng(pos[0], pos[1])
+        @marker.setPosition(latlng)
+        @map.panTo(latlng)
+        $.smoothScroll scrollTarget: @map.getDiv()
+
+    $(window).resize => @map.setCenter @map.getCenter()
 
   ### Event Handlers ###
 
@@ -132,7 +143,7 @@ class window.Main
   ### Helpers ###
 
   grab_title: (el) =>
-    title = el.attr 'title'
+    title = el.data 'title'
     str = @title
     str = "#{title} — #{str}" if title
     document.title = str
