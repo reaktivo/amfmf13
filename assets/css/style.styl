@@ -40,8 +40,9 @@ body
       -webkit-animation none
       animation none
   #illustration
-    background url("/img/amf_illustration.png")
+    background url("/img/amf_illustration.png") no-repeat center center
     width 701px
+    max-width 100%
     padding-top 416px
     margin -120px auto 0
     position relative
@@ -246,8 +247,36 @@ body
         position relative
         display block
 
+@media only screen and (max-width: 480px)
+  #schedule a
+    color #000
+    background #fff
+    margin 20px 20px
+    padding 40px
+    text-transform uppercase
+    text-align center
+    font-weight bold
+    display block
+    box-shadow 0 0 20px rgba(0,0,0,0.3)
+    img
+      display none
+
+@media only screen and (min-width: 481px)
+  #schedule a
+    display block
+    img
+      display block
+      width 100%
+      max-width 960px
+      margin 0 auto
+      border 5px solid #000
+      box-sizing border-box
+    span
+      display none
 
 #festival
+  max-width 960px
+  margin 0 auto
   -moz-column-count 2
   -webkit-column-count 2
   column-count 2

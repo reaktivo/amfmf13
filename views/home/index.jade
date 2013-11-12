@@ -22,6 +22,11 @@ block content
     each band in bands
       a(href="/band/#{band.slug}")!= band.name
 
+  #schedule(data-title="Horarios", data-path="/horarios")
+    a(href="/img/lineup.jpg")
+      span Horarios
+      img(src="/img/lineup.jpg")
+
   #festival(data-title="El Festival", data-path="/festival", data-marker)
 
     :markdown
