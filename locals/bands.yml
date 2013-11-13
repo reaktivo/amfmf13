@@ -9,18 +9,18 @@
     a sus presentaciones podrán confirmar su poder, energía y la sana dosis de ira que las guitarras ofrecen al
     tiempo que se despedazan. Una banda que nació para tocar en vivo.
 
-- name: AJ Dávila
-  and: y Terror Amor
-  slug: ajdavila
-  link: https://soundcloud.com/clubfonograma2/aj-d-vila-animal
-  description: |
-    Primero con una de las bandas referentes del punk (Dávila 666) y ahora como solista, AJ Dávila es la voz atrás de tu
-    hits favoritos y tu nuevo mejor amigo. Apunto de lanzar su primer disco Terror/Amor, el cual cuenta con una lista de
-    colaboraciones que une todo los espectros del escena iberoamericana desde el pop fino de Alex Anwandter, hasta el
-    anarcocorrido de Juan Cirerol. <br> <br> Reflejándose su personalidad, Dávila llena sus composiciones con un actitud feroz,
-    amoroso y únicamente buena onda, hasta llegar a un punk irresistible siempre marcado con un melodía catchy que que te
-    llegará al primer escuchada y  a la quinientas. Presentándose por primera vez en Tijuana, Aj Dávila acompañado con su
-    banda “Terror Amor” contará con la presencia de Selma Oxor, Johnny Otis, Cole Kinnear, Daniel Enrique y Lola Pistola.
+# - name: AJ Dávila
+#   and: y Terror Amor
+#   slug: ajdavila
+#   link: https://soundcloud.com/clubfonograma2/aj-d-vila-animal
+#   description: |
+#     Primero con una de las bandas referentes del punk (Dávila 666) y ahora como solista, AJ Dávila es la voz atrás de tu
+#     hits favoritos y tu nuevo mejor amigo. Apunto de lanzar su primer disco Terror/Amor, el cual cuenta con una lista de
+#     colaboraciones que une todo los espectros del escena iberoamericana desde el pop fino de Alex Anwandter, hasta el
+#     anarcocorrido de Juan Cirerol. <br> <br> Reflejándose su personalidad, Dávila llena sus composiciones con un actitud feroz,
+#     amoroso y únicamente buena onda, hasta llegar a un punk irresistible siempre marcado con un melodía catchy que que te
+#     llegará al primer escuchada y  a la quinientas. Presentándose por primera vez en Tijuana, Aj Dávila acompañado con su
+#     banda “Terror Amor” contará con la presencia de Selma Oxor, Johnny Otis, Cole Kinnear, Daniel Enrique y Lola Pistola.
 
 - name: Apocalipsis
   slug: apocalipsis
@@ -315,6 +315,14 @@
     velocidad, características old school que en SPEAK resultan refrescantes,  y que sin duda en vivo, serán más
     que impresionantes. Sus rimas sagaces le valieron co-escribir con Kreayshawn, y colaborar en tracks de No
     Doubt y Plies.
+
+- name: Sun Araw
+  slug: sun_araw
+  link: https://soundcloud.com/sun-araw
+  embed: |
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/119194821&amp;color=000000&amp;auto_play=true&amp;show_artwork=true"></iframe>
+  description: |
+    Cameron Stallones ha realizado un contingente de psicodélica profunda con bases de dub y rock. Fue uno de los artistas más laureados del Mutek 2012 y pisan tierras tijuanense por primera vez para confundir páneles de introspección analógica y digital, con su live set.
 
 - name: Teenage Kicks
   slug: teenage_kicks
