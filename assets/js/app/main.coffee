@@ -29,8 +29,7 @@ class window.Main
     @band.hide()
     if @mobile
       $.fn.smoothScroll.defaults.offset = 0
-      { width, height } = @viewport()
-      $('band').css { width, height }
+      $('band').css @viewport()
       @indio.hide()
     else
       @indio_threshold = @lineup.offset().top - @indio.outerHeight(yes)
@@ -90,27 +89,27 @@ class window.Main
           return no
 
   setup_map: =>
+    container = $('#map-container')[0]
+    return unless container
     pos = $('*[data-map-default]').data('map-marker')
-    latlng = new LatLng(pos[0], pos[1])
-    @map = new Map $('#map-container')[0],
+    position = new LatLng(pos[0], pos[1])
+    map = new Map container,
       center: latlng
       scrollwheel: no
       zoom: 15
       draggable: not Modernizr.touch
-    @marker = new Marker
-      position: latlng
-      map: @map
+    marker = new Marker { position, map }
 
     $('*[data-map-marker]').each (i, a) =>
       $(a).click (e) =>
         e.preventDefault()
         pos = $(e.currentTarget).data('map-marker')
         latlng = new LatLng(pos[0], pos[1])
-        @marker.setPosition(latlng)
-        @map.panTo(latlng)
-        $.smoothScroll scrollTarget: @map.getDiv()
+        marker.setPosition(latlng)
+        map.panTo(latlng)
+        $.smoothScroll scrollTarget: map.getDiv()
 
-    $(window).resize => @map.setCenter @map.getCenter()
+    $(window).resize => map.setCenter map.getCenter()
 
   ### Event Handlers ###
 
