@@ -3,7 +3,7 @@ each value, key in analytics
   line = JSON.stringify([key].concat(value))
   - gaq_text += "_gaq.push("+ line + ");\n"
 
-script
+script.
   var _gaq = _gaq || [];
   !{gaq_text}
   _gaq.push(['_trackPageview']);
