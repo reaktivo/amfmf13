@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+
+  #video(data-path="/", data-marker)
+    .iframe-wrapper
+      .iframe-height(style="padding-top:56%")
+        iframe(src="//player.vimeo.com/video/86185260?color=ffffff&amp;autoplay=#{locals.initial ? 0 : 1}", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
+
+  #lineup(data-title="Lineup", data-path="/lineup", data-marker)
+    each band in bands
+      a(href="/band/#{band.slug}")!= band.name
+
+  #festival(data-title="El Festival", data-path="/festival", data-marker)
+
+    :markdown
+      Este año, al igual que en las anteriores ediciones, se hace un esfuerzo para
+      poner en el foco de atención al **punk tijuanense**. Pasando por Tijuana No, BeAm,
+      Mercado Negro y muchas bandas más, Tijuana siempre ha sido un semillero para
+      las propuestas más bélicas de punk nacional, por eso nos enorgullece que bandas
+      como **Calafia Puta, Teenage Kicks, Biocrisis, Walle y Bonebreaker**.
+
+    :markdown
+      La estoniana **María Minerva visita por primera vez México**, artista de uno de los
+      sellos angelinos más importantes del underground internacional, **Not Not Fun**,
+      María Minerva ha creado un seguimiento importante con su música de pop experimental
+      y bailable. AMFMF solidifica su **relación con la escena experimental de Los Ángeles,
+      trayendo a Tijuana a Deep Magic, Matthew Sullivan y M. Geddes Gengras, este último
+      con reciente lanzamiento en el sello mexicano Umor Rex**.
+
+    :markdown
+      El talento de rock alternativo de bandas bajacalifornianas como **Ibi Ego, Celofán,
+      Ramona, Rancho Shampoo, Letters From Readers, Siete Catorce y Electric Healing
+      Sound** también confirman la relevancia de Baja California con propuestas innovadoras
+      de indie rock y música&nbsp;electrónica.
+
+    :markdown
+      **La banda chilena Ases Falsos**, con un rock alternativo inspirado en la canción del
+      cantautor Juan Gabriel, hace una parada en Tijuana como parte de su gira y visita
+      por primera vez en México. El disco debut de Ases Falsos, Juventud Americana, fue
+      considerado por el blog Club Fonograma como el mejor disco de música
+      iberoamericana del 2012.
+
+    :markdown
+      **LAO y DJ Smurphy** reconocidos productores de música electrónica underground de la
+      ciudad de México aterrizan en Tijuana para poner a bailar a los asistentes del
+      All My Friends.
+
+
+  #band(data-initial=locals.initial)
+    a(href="/lineup")#lineup-btn Lineup
+    .container
+      block band
+
+
