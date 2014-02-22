@@ -1,3 +1,4 @@
+process.chdir __dirname
 express = require 'express'
 stylus = require 'stylus'
 assets = require 'connect-assets'
@@ -10,7 +11,6 @@ redirect = require './redirect'
 nconf.env().file
   file: 'config.json'
   dir: __dirname
-process.env.NODE_ENV = nconf.get 'NODE_ENV'
 
 module.exports = app = express()
 app.set 'root', __dirname
