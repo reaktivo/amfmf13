@@ -23,6 +23,7 @@
     "nconf": "~0.6.7"
   },
   "devDependencies": {
-    "groc": "*"
+    "groc": "*",
+    "flightplan": "~0.1.5"
   }
 }
