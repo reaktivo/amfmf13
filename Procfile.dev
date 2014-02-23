@@ -1,1 +1,0 @@
-web: supervisor -e "coffee|yml|txt" -i assets server.js

@@ -8,16 +8,11 @@ jsyaml = require 'js-yaml'
 redirect = require './redirect'
 { join } = require 'path'
 
-nconf.env().file
-  file: 'config.json'
-  dir: __dirname
-
 module.exports = app = express()
-app.set 'root', __dirname
-app.set 'port', nconf.get('PORT') or 3000
-app.set 'views', join __dirname, "views"
+app.set 'port', process.env.PORT or 3000
+app.set 'views', "views"
 app.set 'view engine', 'jade'
-app.set 'title', ""
+app.set 'title', "AMFMF"
 app.use redirect()
 app.use express.favicon('assets/img/favicon.png')
 app.use express.logger('dev')
@@ -25,8 +20,8 @@ app.use express.bodyParser()
 app.use express.methodOverride()
 app.use app.router
 app.use assets()
-app.use '/bands', express.static join __dirname, 'bands'
-app.use express.static join __dirname, "assets"
+app.use '/bands', express.static 'bands'
+app.use express.static "assets"
 
 load('locals', extlist:['.yml']).into(app)
 load('routes').into(app)
